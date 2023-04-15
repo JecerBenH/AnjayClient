@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.24)
 
-project(AnjayClient C)
 set(CMAKE_TRY_COMPILE_TARGET_TYPE "STATIC_LIBRARY")
+project(AnjayClient C)
 set(CMAKE_C_STANDARD 99)
 set(CMAKE_C_EXTENSIONS OFF)
 add_compile_options(-Wall -Wextra)
