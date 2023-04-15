@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.24)
 
 project(AnjayClient C)
+SET (CMAKE_C_COMPILER_WORKS 1)
 set(CMAKE_C_COMPILER_WORKS)
 set(CMAKE_C_STANDARD 99)
 set(CMAKE_C_EXTENSIONS OFF)
