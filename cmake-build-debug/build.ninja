@@ -1,0 +1,141 @@
+## This file contains all the build statements describing the
+# compilation DAG.
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# 
+# Which is the root file.
+# =============================================================================
+
+# =============================================================================
+# Project: AnjayClient
+# Configurations: Debug
+# =============================================================================
+
+#############################################
+# Minimal version of Ninja required by this file
+
+ninja_required_version = 1.5
+
+
+#############################################
+# Set configuration variable for custom commands.
+
+CONFIGURATION = Debug
+# =============================================================================
+# Include auxiliary files.
+
+
+#############################################
+# Include rules file.
+
+include CMakeFiles/rules.ninja
+
+# =============================================================================
+
+#############################################
+# Logical path to working directory; prefix for absolute paths.
+
+cmake_ninja_workdir = /Users/jecerbenhammouda/CLionProjects/LwClient/cmake-build-debug/
+# =============================================================================
+# Object build statements for EXECUTABLE target AnjayClient
+
+
+#############################################
+# Order-only phony target for AnjayClient
+
+build cmake_object_order_depends_target_AnjayClient: phony || CMakeFiles/AnjayClient.dir
+
+build CMakeFiles/AnjayClient.dir/src/main.c.o: C_COMPILER__AnjayClient_Debug /Users/jecerbenhammouda/CLionProjects/LwClient/src/main.c || cmake_object_order_depends_target_AnjayClient
+  DEP_FILE = CMakeFiles/AnjayClient.dir/src/main.c.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.7 -fcolor-diagnostics -Wall -Wextra -std=c99
+  INCLUDES = -isystem /usr/local/include
+  OBJECT_DIR = CMakeFiles/AnjayClient.dir
+  OBJECT_FILE_DIR = CMakeFiles/AnjayClient.dir/src
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target AnjayClient
+
+
+#############################################
+# Link the executable AnjayClient
+
+build AnjayClient: C_EXECUTABLE_LINKER__AnjayClient_Debug CMakeFiles/AnjayClient.dir/src/main.c.o | /usr/local/lib/libanjay.a /usr/local/lib/libavs_coap.a /usr/local/lib/libavs_algorithm.a /usr/local/lib/libavs_net_mbedtls.a /usr/local/lib/libavs_crypto_mbedtls.a /usr/local/lib/libmbedtls.dylib /usr/local/lib/libmbedx509.dylib /usr/local/lib/libmbedcrypto.dylib /usr/local/lib/libavs_sched.a /usr/local/lib/libavs_stream_net.a /usr/local/lib/libavs_url.a /usr/local/lib/libavs_persistence.a /usr/local/lib/libavs_stream.a /usr/local/lib/libavs_buffer.a /usr/local/lib/libavs_rbtree.a /usr/local/lib/libavs_list.a /usr/local/lib/libavs_utils.a /usr/local/lib/libavs_compat_threading_pthread.a /usr/local/lib/libavs_log.a /usr/local/lib/libavs_list.a /usr/local/lib/libavs_utils.a /usr/local/lib/libavs_compat_threading_pthread.a /usr/local/lib/libavs_log.a
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=11.7
+  LINK_LIBRARIES = /usr/local/lib/libanjay.a  /usr/local/lib/libavs_coap.a  /usr/local/lib/libavs_algorithm.a  /usr/local/lib/libavs_net_mbedtls.a  /usr/local/lib/libavs_crypto_mbedtls.a  /usr/local/lib/libmbedtls.dylib  /usr/local/lib/libmbedx509.dylib  /usr/local/lib/libmbedcrypto.dylib  /usr/local/lib/libavs_sched.a  /usr/local/lib/libavs_stream_net.a  /usr/local/lib/libavs_url.a  /usr/local/lib/libavs_persistence.a  /usr/local/lib/libavs_stream.a  /usr/local/lib/libavs_buffer.a  /usr/local/lib/libavs_rbtree.a  /usr/local/lib/libavs_list.a  /usr/local/lib/libavs_utils.a  /usr/local/lib/libavs_compat_threading_pthread.a  /usr/local/lib/libavs_log.a  /usr/local/lib/libavs_list.a  /usr/local/lib/libavs_utils.a  /usr/local/lib/libavs_compat_threading_pthread.a  /usr/local/lib/libavs_log.a
+  OBJECT_DIR = CMakeFiles/AnjayClient.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = AnjayClient
+  TARGET_PDB = AnjayClient.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/jecerbenhammouda/CLionProjects/LwClient/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build edit_cache: phony CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/jecerbenhammouda/CLionProjects/LwClient/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/jecerbenhammouda/CLionProjects/LwClient -B/Users/jecerbenhammouda/CLionProjects/LwClient/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build rebuild_cache: phony CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Target aliases.
+
+# =============================================================================
+# Folder targets.
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/jecerbenhammouda/CLionProjects/LwClient/cmake-build-debug
+
+build all: phony AnjayClient
+
+# =============================================================================
+# Built-in targets
+
+
+#############################################
+# Re-run CMake if any of its inputs changed.
+
+build build.ninja: RERUN_CMAKE | /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/UnixPaths.cmake /Users/jecerbenhammouda/CLionProjects/LwClient/CMakeLists.txt /usr/local/lib/anjay/anjay-config.cmake /usr/local/lib/anjay/anjay-targets-noconfig.cmake /usr/local/lib/anjay/anjay-targets.cmake /usr/local/lib/avs_coap/avs_coap-config.cmake /usr/local/lib/avs_coap/avs_coap-targets-noconfig.cmake /usr/local/lib/avs_coap/avs_coap-targets.cmake /usr/local/lib/avs_commons/avs_commons-config.cmake /usr/local/lib/avs_commons/avs_commons-targets-noconfig.cmake /usr/local/lib/avs_commons/avs_commons-targets.cmake /usr/local/lib/avs_commons/cmake/FindMbedTLS.cmake CMakeCache.txt CMakeFiles/3.24.2/CMakeCCompiler.cmake CMakeFiles/3.24.2/CMakeSystem.cmake
+  pool = console
+
+
+#############################################
+# A missing CMake input file is not an error.
+
+build /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.24/Modules/Platform/UnixPaths.cmake /Users/jecerbenhammouda/CLionProjects/LwClient/CMakeLists.txt /usr/local/lib/anjay/anjay-config.cmake /usr/local/lib/anjay/anjay-targets-noconfig.cmake /usr/local/lib/anjay/anjay-targets.cmake /usr/local/lib/avs_coap/avs_coap-config.cmake /usr/local/lib/avs_coap/avs_coap-targets-noconfig.cmake /usr/local/lib/avs_coap/avs_coap-targets.cmake /usr/local/lib/avs_commons/avs_commons-config.cmake /usr/local/lib/avs_commons/avs_commons-targets-noconfig.cmake /usr/local/lib/avs_commons/avs_commons-targets.cmake /usr/local/lib/avs_commons/cmake/FindMbedTLS.cmake CMakeCache.txt CMakeFiles/3.24.2/CMakeCCompiler.cmake CMakeFiles/3.24.2/CMakeSystem.cmake: phony
+
+
+#############################################
+# Clean all the built files.
+
+build clean: CLEAN
+
+
+#############################################
+# Print all primary targets available.
+
+build help: HELP
+
+
+#############################################
+# Make the all target the default.
+
+default all
