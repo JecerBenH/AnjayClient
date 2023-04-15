@@ -1,5 +1,5 @@
 FROM amd64/alpine:3.17.3
-RUN apt-get update  \
+RUN apt update  \
     && apt install build-essential cmake --no-install-recommends \
     && cd LwClient \
     && mkdir app\
