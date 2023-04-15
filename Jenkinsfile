@@ -14,7 +14,7 @@ pipeline{
         stage('Build Docker Image'){
              steps {
                   script{
-                        sh 'docker image build  -t jecer1997/anjay:latest .  '
+                        sh 'docker image build --no-cache -t jecer1997/anjay:latest .  '
                   }
              }
         }
