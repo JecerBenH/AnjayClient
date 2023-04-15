@@ -1,6 +1,6 @@
 FROM amd64/alpine:3.17.3
-RUN apt update  \
-    && apt install build-essential cmake --no-install-recommends \
+RUN apk update  \
+    && apk add cmake \
     && cd LwClient \
     && mkdir app\
     &&  cmake --build ./app --target AnjayClient -j 6
