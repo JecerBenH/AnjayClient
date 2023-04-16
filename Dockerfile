@@ -5,7 +5,7 @@ RUN apk add git && apk add ninja && apk add gcc && apk add --no-cache \clang \
                                                                                      alpine-sdk \
                                                                                      dpkg \
                                                                                      cmake \
-                                                                                     ccache \
+                                                                                     ccache
 
 RUN git clone https://github.com/JecerBenH/AnjayClient.git
 RUN cd AnjayClient
