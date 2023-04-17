@@ -4,7 +4,8 @@ RUN apk add git && apk add ninja && apk add gcc && apk add --no-cache \clang \cl
 RUN git clone https://github.com/AVSystem/Anjay.git \
         && cd Anjay \
         && git submodule update --init \
-        && cmake . \
+        && cmake . -DDTLS_BACKEND="" \
+        && make -j \
         && cd ..
 RUN git clone https://github.com/JecerBenH/AnjayClient.git
 RUN cd AnjayClient
