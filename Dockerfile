@@ -4,6 +4,7 @@ RUN apk add git && apk add ninja && apk add gcc && apk add --no-cache \clang \cl
 RUN git clone https://github.com/AVSystem/Anjay.git \
         && cd Anjay \
         && git submodule update --init \
+        && sed '570,588d' CMakeLists.txt \
         && cmake . -DDTLS_BACKEND="" \
         && make -j \
         && cd ..
