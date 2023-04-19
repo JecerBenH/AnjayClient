@@ -5,7 +5,8 @@ RUN git clone https://github.com/AVSystem/Anjay.git \
         && cd Anjay \
         && git submodule update --init
 
-RUN sed -i 's+bash+/bin/sh+g' CMakeLists.txt \
+RUN cd Anjay \
+        && sed -i 's+bash+/bin/sh+g' CMakeLists.txt \
         && cmake . -DDTLS_BACKEND="" \
         && make -j \
         && cd ..
