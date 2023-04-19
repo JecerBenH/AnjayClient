@@ -4,7 +4,7 @@ RUN apk add git && apk add ninja && apk add gcc && apk add bash && apk add --no-
 RUN git clone https://github.com/AVSystem/Anjay.git \
         && cd Anjay \
         && git submodule update --init \
-        && cmake -DOPENSSL_ROOT_DIR=/usr/local/opt/openssl .  \
+        && cmake -DOPENSSL_ROOT_DIR=/usr/local/opt/openssl -DOPENSSL_LIBRARIES=/usr/local/opt/openssl/lib .  \
         && make \
         && sudo make install
 
