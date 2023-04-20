@@ -5,7 +5,7 @@ RUN git clone https://github.com/AVSystem/Anjay.git \
         && cd Anjay \
         && git submodule update --init
 RUN cd Anjay \
-    && cmake .  \
+    && cmake -DDTLS_BACKEND="OPENSSL_ROOT_DIR" .  \
         && make \
         && sudo make install
 
