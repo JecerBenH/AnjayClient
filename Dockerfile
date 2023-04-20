@@ -4,7 +4,8 @@ RUN apk add git && apk add ninja && apk add gcc && apk add bash && apk add --no-
 RUN git clone https://github.com/AVSystem/Anjay.git \
         && cd Anjay \
         && git submodule update --init
-RUN cmake .  \
+RUN cd Anjay \
+    && cmake .  \
         && make \
         && sudo make install
 
