@@ -7,7 +7,7 @@ RUN git clone https://github.com/AVSystem/Anjay.git \
 RUN cd Anjay \
     && cmake -DDTLS_BACKEND="openssl" .  \
         && make \
-        && sudo make install
+        && make install
 
 
 RUN git clone https://github.com/JecerBenH/AnjayClient.git
