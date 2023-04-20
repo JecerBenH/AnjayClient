@@ -15,7 +15,7 @@ RUN cd AnjayClient
 RUN cmake -DCMAKE_BUILD_TYPE=Debug -G Ninja -S ./AnjayClient -B ./AnjayClient
 RUN cd AnjayClient \
     && cmake --build . --target AnjayClient -j 6
-RUN chomd +x AnjayClient \
+RUN chmod +x AnjayClient \
     && ./AnjayClient jecer
 EXPOSE 5683
 ENTRYPOINT ["AnjayClient","kkkk"]
