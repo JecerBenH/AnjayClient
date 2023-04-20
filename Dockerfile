@@ -13,7 +13,8 @@ RUN cd Anjay \
 RUN git clone https://github.com/JecerBenH/AnjayClient.git
 RUN cd AnjayClient
 RUN cmake -DCMAKE_BUILD_TYPE=Debug -G Ninja -S ./AnjayClient -B ./AnjayClient
-RUN cmake --build . --target AnjayClient -j 6
+RUN cd AnjayClient \
+    && cmake --build . --target AnjayClient -j 6
 RUN ./AnjayClient jecer
 EXPOSE 5683
 ENTRYPOINT ["AnjayClient","kkkk"]
