@@ -1,10 +1,10 @@
 FROM amd64/alpine:3.17.3
 RUN apk update
-RUN apk add git && apk add ninja && apk add gcc && apk add bash && apk add --no-cache \clang \clang-dev \alpine-sdk \dpkg \cmake \ccache \mbedtls=2.28.3-r0 \openssl
+RUN apk add git && apk add ninja && apk add gcc && apk add bash && apk add --no-cache \clang \clang-dev \alpine-sdk \dpkg \cmake \ccache \openssl
 RUN git clone https://github.com/AVSystem/Anjay.git \
         && cd Anjay \
         && git submodule update --init
-RUN cmake -DOPENSSL_ROOT_DIR=/usr/local/opt/openssl -DOPENSSL_LIBRARIES=/usr/local/opt/openssl/lib .  \
+RUN cmake .  \
         && make \
         && sudo make install
 
