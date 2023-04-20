@@ -13,11 +13,10 @@ RUN cd Anjay \
 RUN git clone https://github.com/JecerBenH/AnjayClient.git
 RUN cd AnjayClient
 RUN cmake -DCMAKE_BUILD_TYPE=Debug -G Ninja -S ./AnjayClient -B ./AnjayClient
-RUN set -ex && apk --no-cache add sudo
+
 RUN cd AnjayClient \
     && cmake --build . --target AnjayClient -j 6
 RUN cd AnjayClient \
-    && chmod +x AnjayClient \
-    && ./AnjayClient jecer
+    && chmod +x AnjayClient
 EXPOSE 5683
-ENTRYPOINT ["AnjayClient","kkkk"]
+ENTRYPOINT ["./AnjayClient","jecer"]
