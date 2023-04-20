@@ -16,7 +16,7 @@ RUN cmake -DCMAKE_BUILD_TYPE=Debug -G Ninja -S ./AnjayClient -B ./AnjayClient
 RUN set -ex && apk --no-cache add sudo
 RUN cd AnjayClient \
     && cmake --build . --target AnjayClient -j 6
-RUN chmod +x AnjayClient/AnjayClient \
-    && sudo ./AnjayClient jecer
+RUN chmod +x ./AnjayClient \
+    && ./AnjayClient jecer
 EXPOSE 5683
 ENTRYPOINT ["AnjayClient","kkkk"]
