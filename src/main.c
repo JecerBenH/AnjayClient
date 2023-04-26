@@ -2,6 +2,7 @@
 #include <anjay/security.h>
 #include <anjay/server.h>
 #include <avsystem/commons/avs_log.h>
+#include "utils/newObj.h"
 
 static int setup_security_object(anjay_t *anjay) {
     if (anjay_security_object_install(anjay)) {
@@ -64,8 +65,6 @@ static int setup_server_object(anjay_t *anjay) {
 }
 
 
-
-
 int main(int argc, char *argv[]) {
     if (argc != 2) {
         avs_log(tutorial, ERROR, "usage: %s ENDPOINT_NAME", argv[0]);
@@ -90,6 +89,14 @@ int main(int argc, char *argv[]) {
     if (setup_security_object(anjay) || setup_server_object(anjay)) {
         result = -1;
     }
+
+    //adding the new object
+    anjay_dm_object_def_t OBJECT_DEF = createNewObject(500);
+
+    const anjay_dm_object_def_t *new_object_def_ptr = &OBJECT_DEF;
+
+    anjay_register_object(anjay, &new_object_def_ptr);
+
 
     if (!result) {
         result = anjay_event_loop_run(
